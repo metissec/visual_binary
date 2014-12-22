@@ -1,0 +1,2 @@
+Visual Binary Class
+
