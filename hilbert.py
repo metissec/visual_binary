@@ -14,18 +14,18 @@ class Hilbert():
         return next(self.iter)
     
     def _hil(self, dirs, rot, order):
-            if (order == 0): 
-                return
-            dirs += rot
-            yield from self._hil(dirs, -rot, (order-1))
-            yield from self._step(dirs)
-            dirs -= rot
-            yield from self._hil(dirs, rot, (order-1))
-            yield from self._step(dirs)
-            yield from self._hil(dirs, rot, (order-1))
-            dirs -= rot
-            yield from self._step(dirs)
-            yield from self._hil(dirs, -rot, (order-1))
+        if (order == 0): 
+            return
+        dirs += rot
+        yield from self._hil(dirs, -rot, (order-1))
+        yield from self._step(dirs)
+        dirs -= rot
+        yield from self._hil(dirs, rot, (order-1))
+        yield from self._step(dirs)
+        yield from self._hil(dirs, rot, (order-1))
+        dirs -= rot
+        yield from self._step(dirs)
+        yield from self._hil(dirs, -rot, (order-1))
     
     def _step(self, dirs):
     
